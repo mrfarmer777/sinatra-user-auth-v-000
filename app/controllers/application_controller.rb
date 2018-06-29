@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/sessions' do
-
+    @user=User.find_by(params)
     redirect '/users/home'
   end
 
