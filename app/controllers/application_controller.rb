@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
 
   post '/sessions' do
     @user=User.find_by(params)
-    if @user=nil
+    if @user==nil
       redirect '/sessions/login'
     else
       session[:id]=@user.id
